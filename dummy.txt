@@ -1,0 +1,35 @@
+ <!-- <form action="pay.php?prize=<?php echo $prize;?>&name=<?php echo $name;?>&itemid=<?php echo $itemid;?>&
+                id=<?php echo $id;?>&
+                phone=<?php echo $phone;?>&
+                address=<?php echo $address;?>&
+                size=<?php echo $size;?>&
+                pay=<?php echo $pay;?>&
+                itemname=<?php echo $itemname;?>&
+                feature=<?php echo $feature;?>&
+                image=<?php echo $image;?>&
+                customerEmail=<?php echo $email;?>
+                " method="post">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    
+                    data-key="<?php echo $publishablekey;?>",
+                    data-email="<?php echo $email;?>"
+                    data-name="Pizza Web"
+                    data-description="We Serve Organic Food"
+                    data-image="banner/serving.png"
+                    data-currency="inr"
+                    >
+                    </script>
+                </form> -->
+
+
+
+                ?prize=<?php echo $prize;?>&name=<?php echo $name;?>&itemid=<?php echo $itemid;?>&
+                id=<?php echo $id;?>&
+                phone=<?php echo $phone;?>&
+                address=<?php echo $address;?>&
+                size=<?php echo $size;?>&
+                pay=<?php echo $pay;?>&
+                itemname=<?php echo $itemname;?>&
+                feature=<?php echo $feature;?>&
+                image=<?php echo $image;?>&
+                customerEmail=<?php echo $email;?>

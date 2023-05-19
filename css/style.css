@@ -1,0 +1,845 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Bahnschrift SemiBold;
+    background-color: #ede5e529;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+:root {
+    --outerShadow: 1px 1px 2px 1px #00000066;
+    --innerShadow: inset 0 0 2px #000000;
+    --redColor: #ee3124;
+    --greenColor: #00a160;
+    --yellowColor: #ffc425;
+    --backgroundColor: #d3d3d333;
+    --textShadow: 1px 1px 1px black;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--yellowColor);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #e5b60b;
+}
+
+.btn {
+    background-color: white;
+    padding: 6px 10px;
+    color: black;
+    box-shadow: var(--outerShadow);
+}
+.btn:hover {
+    box-shadow: var(--innerShadow);
+    transform: scale(0.98, 0.98);
+    color: var(--greenColor);
+}
+/* Banner Navigation */
+.bannerNavigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    height: 7vh;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.logo {
+    filter: drop-shadow(var(--textShadow));
+    color: var(--greenColor);
+    font-family: Viner Hand ITC;
+}
+
+.logo span {
+    color: var(--redColor);
+}
+.logo i {
+    color: var(--yellowColor);
+}
+
+.bannerNavigation a {
+    color: white;
+    padding: 4px 10px;
+    margin: 0px 10px;
+}
+.bannerNavigation a:hover {
+    color: var(--yellowColor);
+}
+
+/* Banner */
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    width: 100%;
+}
+#quotesDiv {
+    display: flex;
+}
+.banner h1 {
+    filter: drop-shadow(var(--textShadow));
+    color: var(--yellowColor);
+    font-size: 3rem;
+}
+.banner p {
+    color: white;
+    width: 55%;
+    margin: 10px 0px;
+}
+
+#quotesDiv div {
+    padding: 1.5rem 2px;
+    margin: 0px 5px;
+    background-color: var(--yellowColor);
+    animation: blink-animation 0.5s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    from {
+        visibility: visible;
+    }
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Login Form */
+.Form {
+    position: fixed;
+    display: none;
+
+    text-align: center;
+    padding: 5px;
+    width: 30%;
+    box-shadow: 0px 10px 10px -9px black;
+    margin: 0px 35%;
+    margin-top: 20vh;
+    padding: 30px 10px;
+    z-index: 1;
+    background-color: white;
+}
+.Form div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+.inputFied input,
+.inputFied textarea,
+.inputFied select {
+    padding: 6px 10px;
+    width: 80%;
+    outline: none;
+    border: none;
+    box-shadow: var(--innerShadow);
+}
+
+.inputFied i {
+    padding: 6px 10px;
+    background-color: var(--greenColor);
+    color: white;
+    filter: drop-shadow(var(--textShadow));
+}
+.formBtn input {
+    width: 86%;
+    padding: 6px 0px;
+    cursor: pointer;
+    box-shadow: var(--outerShadow);
+    border: none;
+    outline: none;
+    background-color: var(--greenColor);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.formBtn input:hover {
+    box-shadow: var(--innerShadow);
+    transform: scale(0.98, 0.98);
+}
+.Form a {
+    color: var(--redColor);
+}
+#logoSignUp {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+#closeHeading i {
+    padding: 10px;
+}
+#closeSignup:hover,
+#closeLogin:hover {
+    color: var(--redColor);
+    cursor: pointer;
+}
+#errorHeading {
+    position: fixed;
+    display: none;
+    width: 100%;
+    color: white;
+    background-color: var(--redColor);
+    padding: 10px;
+    z-index: 2;
+}
+#errorHeading i {
+    float: right;
+}
+#closeError:hover {
+    cursor: pointer;
+    color: maroon;
+}
+
+/* Menu Navigation and Home Menu */
+.menuNavigation {
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 7vh;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    box-shadow: 0px 10px 10px -12px black;
+}
+#menuBody {
+    background-color: var(--backgroundColor);
+}
+.menuNavigationDIv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+}
+
+.menuNavigationDIv div {
+    display: flex;
+}
+
+.menuNavigationDIv div h1,
+.menuNavigationDIv div i {
+    margin: 0px 10px;
+}
+.menuDiv {
+    margin-top: 7vh;
+    height: 100vh;
+    position: fixed;
+    display: none;
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+    box-shadow: var(--outerShadow);
+    padding: 20px;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+    color: white;
+}
+.menuDiv div {
+    margin: 10px 0px;
+    padding: 6px 10px;
+}
+
+.menuDiv div a {
+    color: gray;
+}
+.menuDiv div span {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: var(--redColor);
+    color: white;
+    text-align: center;
+}
+
+.menuDiv a:hover {
+    color: var(--greenColor);
+}
+#menuBar {
+    color: white;
+}
+#menuBar:hover,
+#menuClose:hover {
+    cursor: pointer;
+    color: gray;
+}
+/* Items */
+.items {
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.menuHeading span {
+    font-family: Viner Hand ITC;
+    margin-right: 10px;
+    color: var(--redColor);
+    filter: drop-shadow(var(--textShadow));
+}
+.menusDiv {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 5%;
+}
+.indivaluItem {
+    width: 25%;
+
+    height: 40vh;
+    box-shadow: 0px 10px 10px -9px gray;
+    margin: 20px;
+}
+.individualImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    height: 45%;
+    color: white;
+}
+.individualImage div {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(var(--textShadow));
+    background-color: white;
+}
+.individualImage div span {
+    padding: 5px;
+    border-radius: 10px;
+}
+.hrt {
+    color: red;
+    filter: drop-shadow(var(--textShadow));
+}
+.nonveg {
+    border: 2px solid red;
+}
+.nonveg span {
+    background-color: red;
+}
+.veg {
+    border: 2px solid green;
+}
+.veg span {
+    background-color: green;
+}
+.individualImage h1 {
+    filter: drop-shadow(var(--textShadow));
+}
+.individualFeature {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 55%;
+    background-color: white;
+}
+.individualFeature a {
+    margin: 10px;
+    text-align: center;
+    border: 2px solid green;
+    padding: 6px 0px;
+    border-radius: 2px;
+    color: green;
+}
+.individualFeature a:hover {
+    box-shadow: var(--innerShadow);
+    color: gray;
+    border: none;
+    transform: scale(0.95, 0.95);
+}
+.individaulParagraph {
+    height: 45%;
+    margin: 10px 0px;
+    overflow: hidden;
+}
+/* Cart Item and Order*/
+.cart {
+    margin-top: 8vh;
+    padding: 20px;
+}
+.cartItem {
+    padding: 10px 10%;
+}
+.individualCart {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    margin: 20px 0px;
+    box-shadow: 0px 10px 10px -9px gray;
+    border: 1px solid var(--redColor);
+    background-color: white;
+}
+.cartOuterDiv {
+    padding: 10px;
+    display: flex;
+    height: 70%;
+    width: 100%;
+    box-shadow: var(--innerShadow);
+}
+
+.cartOuterDiv img {
+    margin-right: 20px;
+    width: 200px;
+    filter: drop-shadow(var(--textShadow));
+}
+.cartOuterDiv h2 {
+    margin: 5px 0px;
+}
+.menuHeading {
+    padding: 10px 10%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.menuHeading hr {
+    min-width: 40%;
+
+    background-color: gray;
+    height: 2px;
+}
+.menuHeading span {
+    font-family: Viner Hand ITC;
+    margin-right: 10px;
+    color: var(--redColor);
+    filter: drop-shadow(var(--textShadow));
+}
+.individualCart form {
+    padding: 5px 20px;
+    background-color: var(--redColor);
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.individualCart form input,
+.individualCart form textarea,.individualCart form select{
+    outline: none;
+    height: 60%;
+    border: none;
+    padding: 6px 10px;
+}
+.individualCart form .btn2 {
+    color: white;
+    margin:0px 10px;
+    background-color: var(--yellowColor);
+}
+.individualCart form .btn2:hover {
+    background-color: white;
+    color: var(--yellowColor);
+    transform: scale(0.98, 0.98);
+    box-shadow: var(--innerShadow);
+    cursor: pointer;
+}
+#delete {
+    float: right;
+    color: gray;
+    cursor: pointer;
+}
+#delete:hover {
+    color: red;
+}
+.orderDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    background-color: white;
+}
+.orderDetails p {
+    margin: 0px 20px;
+}
+.orderDetails i {
+    margin: 10px 10px;
+    color: var(--yellowColor);
+    filter: drop-shadow(0px 1px 1px black);
+}
+.orderDetails i:hover {
+    transform: scale(1.1, 1.1);
+}
+.orderDetails span {
+    margin: 0px 2px;
+    color: var(--yellowColor);
+}
+/* Oragnic  Style*/
+.oragnic {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    padding: 20px 10%;
+}
+.oragnic div {
+    width: 25%;
+    margin: 10px 30px;
+}
+.oragnic div i {
+    margin: 10px 0px;
+    color: var(--greenColor);
+}
+/* Admin Style */
+table {
+    width: 96%;
+    margin: 10px 2%;
+    margin-top: 10vh;
+    box-shadow: 0px 10px 10px -9px gray;
+    padding: 10px;
+    background-color: white;
+}
+
+table tr td {
+    padding: 6px 10px;
+    border: 1px solid gray;
+}
+td img {
+    width: 100px;
+}
+table .idno {
+    background-color: var(--yellowColor);
+    text-align: center;
+    color: white;
+}
+
+.operation {
+    text-align: center;
+}
+.operation a i {
+    color: var(--greenColor);
+}
+.operation a i:hover {
+    color: gray;
+}
+
+.tableTh {
+    border: none;
+}
+/* Admin Dashboard */
+.dashboard {
+    margin-top: 7vh;
+    height: 100%;
+    padding: 20px;
+    width: 100%;
+    /* margin-left: 20%; */
+}
+.adminNav {
+    position: fixed;
+    width: 20%;
+    margin-top: 7vh;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    padding: 50px 20px;
+    color: white;
+    flex-direction: column;
+}
+
+.adminNav div {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    padding: 6px 0px;
+}
+.adminNav div i {
+    margin-right: 20px;
+}
+.adminNav div a {
+    color: white;
+}
+.adminNav a:hover {
+    color: gray;
+}
+.analyze {
+    width: 100%;
+    height: 100%;
+}
+.analyzeDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 10px;
+}
+.analyzeOuterDiv {
+    display: flex;
+    width: 20%;
+    background-color: white;
+    box-shadow: 0px 10px 10px -9px gray;
+    margin: 10px;
+}
+.analyzeIconDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background-color: var(--yellowColor);
+}
+.analyzeContentDiv {
+    padding: 10px;
+}
+/* Since and Chief Section Style */
+.chiefSection,
+.sinceSection {
+    padding: 50px 10%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.chiefSection img,
+.sinceSection img {
+    width: 35%;
+    height: 50%;
+    filter: drop-shadow(var(--textShadow));
+}
+.chiefSection div,
+.sinceSection div {
+    text-align: justify;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.chiefSection div a {
+    margin: auto;
+    width: 150px;
+    margin-top: 10px;
+    text-align: center;
+    padding: 6px 10px;
+    background-color: var(--yellowColor);
+    border-radius: 10px;
+    color: white;
+}
+.chiefSection div a:hover {
+    box-shadow: inset var(--outerShadow);
+    transform: scale(0.9, 0.9);
+}
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    width: 100%;
+
+    padding: 10px 0px;
+    color: gray;
+}
+.footerDiv {
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+.footerDiv div {
+    padding: 10px 20px;
+}
+.footerDiv div ul li {
+    list-style: none;
+    margin: 10px;
+}
+#footerIconDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#footerIconDiv i {
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: var(--outerShadow);
+    margin: 10px;
+}
+#footerIconDiv i:hover {
+    box-shadow: inset var(--outerShadow);
+}
+.footerDiv div ul li a {
+    color: gray;
+}
+.footerDiv div ul li a:hover {
+    color: var(--greenColor);
+}
+footer span,
+footer i {
+    color: var(--greenColor);
+}
+/* Responsive */
+@media Screen and (min-device-width: 200px) and (max-device-width: 1024px) {
+    .chiefSection,
+    .sinceSection {
+        flex-wrap: wrap;
+    }
+    .chiefSection img,
+    .sinceSection img {
+        width: 100%;
+        height: 50%;
+    }
+
+    .footerDiv {
+        display: none;
+    }
+    .footerHeading {
+        display: none;
+    }
+    table {
+        width: 100%;
+        margin: 10px 0px;
+        margin-top: 8vh;
+        box-shadow: 0px 10px 10px -9px gray;
+        padding: 2px;
+    }
+    .menuHeading hr {
+        display: none;
+    }
+    table tr td {
+        padding: 6px 5px;
+        border: 1px solid gray;
+    }
+    .analyzeOuterDiv {
+        display: flex;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 10px 10px -9px gray;
+        margin: 10px;
+    }
+}
+@media Screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .Form {
+        width: 80%;
+        margin: 0px 10%;
+        margin-top: 20vh;
+    }
+    .menuDiv {
+        margin-top: 8vh;
+        width: 40%;
+    }
+    .items {
+        margin-top: 11vh;
+    }
+    .indivaluItem {
+        width: 40%;
+    }
+
+    .menuNavigation {
+        height: 8vh;
+    }
+    .lowerMenuNav {
+        background-color: white;
+        overflow-x: scroll;
+        text-align: center;
+    }
+
+    .lowerMenuNav a {
+        font-size: 0.8rem;
+        margin: 2px 5px;
+    }
+    .cartItem {
+        padding: 10px 2%;
+    }
+    .individualCart form input,
+    .individualCart form textarea,.individualCart form select{
+        width: 100px;
+        height: 50%;
+        margin: 2px;
+        padding: 6px 2px;
+    }
+    .individualCart form {
+        padding: 5px;
+    }
+
+    .oragnic div {
+        width: 30%;
+        margin: 10px 30px;
+    }
+}
+
+@media Screen and (min-device-width: 200px) and (max-device-width: 600px) {
+    .oragnic div {
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 0.8rem;
+    }
+    .banner h1 {
+        font-size: 2rem;
+    }
+    #quotesDiv {
+        flex-wrap: wrap;
+    }
+    #quotesDiv div {
+        padding: 1rem 2px;
+    }
+    .Form {
+        width: 80%;
+        margin: 0px 10%;
+        margin-top: 20vh;
+    }
+    .menuDiv {
+        width: 50%;
+    }
+
+    .indivaluItem {
+        width: 100%;
+        height: 55vh;
+    }
+    .individualCart {
+        height: 100%;
+        margin: 20px 0px;
+    }
+    .cartOuterDiv {
+        flex-direction: column;
+    }
+    .individualCart form {
+        display: flex;
+        flex-direction: column;
+    }
+    .individualCart form input,
+    .individualCart form textarea,.individualCart form select {
+        width: 100%;
+        margin: 5px;
+    }
+    .orderDetails {
+        flex-direction: column;
+        padding: 5px;
+        align-items: flex-start;
+    }
+    .orderDetails p {
+        margin: 10px 0px;
+    }
+    .orderDetails span {
+        margin: 0px 2px;
+        color: var(--yellowColor);
+    }
+
+    .innerMenuDetails div {
+        width: 100%;
+    }
+}
